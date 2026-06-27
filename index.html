@@ -384,7 +384,7 @@
         choices: [
           ["A", "焦っているかわからない"],
           ["B", "友人が楽しそうにしている姿と比べてしまう"],
-          ["C", "副業や転職の発信を見ると、今のままでいいのか不安になる"],
+          ["C", "副業系の発信を見ると\n今のままでいいのか不安になる"],
           ["D", "自分ももっと成長できる環境に行きたい"]
         ]
       },
@@ -478,7 +478,7 @@
         const button = document.createElement("button");
         button.className = "choice-button";
         button.type = "button";
-        button.textContent = `${key}. ${text}`;
+        button.innerHTML = `<span class="choice-key">${key}.</span> ${text.replace(/\n/g, "<br>")}`;
         button.addEventListener("click", () => answer(key));
         choicesEl.appendChild(button);
       });
