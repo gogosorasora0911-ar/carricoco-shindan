@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>20代キャリア現在地診断</title>
+  <title>20代キャリア診断</title>
   <style>
     :root {
       --yellow: #ffd21e;
@@ -308,10 +308,10 @@
     <section id="start-screen" class="screen active">
       <div class="hero">
         <img class="mark" src="carricoco-symbol.png" alt="キャリココ">
-        <p class="eyebrow">キャリココ｜20代キャリア現在地診断</p>
-        <h1>このまま働いて、<br>後悔しない？</h1>
-        <p class="lead">転職するか、残るか、学ぶか。決めきれない理由を、まずは5問で整理してみてください。</p>
-        <button class="primary-button" type="button" id="start-button">いまの現在地を見てみる</button>
+        <p class="eyebrow">キャリココ｜20代キャリア診断</p>
+        <h1>一度きりの人生、<br>今の仕事に<br>熱狂できてる？</h1>
+        <p class="lead">本当に転職すべきか、今の環境で積むべきか。決めきれない感情を、5つの問いで整理しましょう。</p>
+        <button class="primary-button" type="button" id="start-button">診断スタート</button>
       </div>
     </section>
 
@@ -334,13 +334,12 @@
           <p class="description" id="result-description"></p>
           <ul class="steps" id="result-steps"></ul>
           <div class="encourage">
-            <p>今のモヤモヤだけで、将来が決まるわけではありません。<br>選び方と積む経験を変えれば、キャリアはここから作れます。</p>
-            <p style="margin-top: 16px;">転職するかどうかは、今すぐ決めなくて大丈夫です。<br>まずは、あなたに残っている選択肢を一緒に整理しましょう。</p>
+            <p>今の状態がゴールではありません。<br>選び方と積む経験を変えれば、キャリアはここから作れます。</p>
           </div>
         </div>
         <div class="cta">
-          <p>求人を見る前に、スクールに入る前に、まずは今の現在地を一緒に整理しましょう。キャリココ公式LINEでは、あなたの状況に合わせて、次に積むべき経験とキャリアの方向性を一緒に考えます。</p>
-          <a class="primary-button" href="https://lin.ee/9hKVgtP" target="_blank" rel="noopener">LINEでキャリア相談する</a>
+          <p>ひとりで決めきれない時は、LINEで一緒に整理できます。求人紹介ではなく、今の違和感と次に積む経験を見つける相談です。</p>
+          <a class="primary-button" id="line-cta" href="https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean" target="_blank" rel="noopener">LINEでキャリア相談する</a>
         </div>
       </div>
     </section>
@@ -351,37 +350,37 @@
       {
         text: "今の仕事について、いちばん近い感覚は？",
         choices: [
-          ["A", "嫌いではないけど、ずっと引っかかっている"],
-          ["B", "頑張っているのに、この先の絵が見えない"],
-          ["C", "早く変わらないと置いていかれそうで焦る"],
-          ["D", "もっと成長できる場所に移りたい"]
+          ["A", "嫌いではないが、何か引っ掛かってる"],
+          ["B", "頑張ってるのに、先が見えてこない"],
+          ["C", "周りとの差を感じ始めてる"],
+          ["D", "もっと成長できる環境がいい"]
         ]
       },
       {
-        text: "キャリアを考える時、いちばん不安なことは？",
+        text: "キャリアを考える時、いちばん引っかかることは？",
         choices: [
           ["A", "やりたいことがない"],
           ["B", "自分の強みがわからない"],
-          ["C", "転職・スクール・独立の情報に振り回される"],
-          ["D", "未経験で通用するのかわからない"]
+          ["C", "SNSの情報に振り回される"],
+          ["D", "未経験だから不安"]
         ]
       },
       {
-        text: "SNSを見て焦ることはある？",
+        text: "SNSを見た時、近い感情は？",
         choices: [
-          ["A", "ある。けど、何に焦っているのかまでは言えない"],
-          ["B", "同世代が成長しているのを見ると不安になる"],
-          ["C", "フリーランスや副業の投稿を見ると遅れている気がする"],
-          ["D", "自分ももっと実力をつけたいと思う"]
+          ["A", "焦っているかわからない"],
+          ["B", "友人が楽しそうにしている姿と比べてしまう"],
+          ["C", "副業や転職の発信を見ると、今のままでいいのか不安になる"],
+          ["D", "自分ももっと成長できる環境に行きたい"]
         ]
       },
       {
-        text: "今いちばん欲しいものは？",
+        text: "今いちばん知りたいことは？",
         choices: [
-          ["A", "自分の本音を整理する時間"],
-          ["B", "強みや向いている仕事の言語化"],
-          ["C", "情報に流されない判断基準"],
-          ["D", "キャリアアップにつながる具体的な選択肢"]
+          ["A", "今のモヤモヤの正体"],
+          ["B", "強みや向いている仕事"],
+          ["C", "自分だけのキャリア軸"],
+          ["D", "成長できる環境の見つけ方"]
         ]
       },
       {
@@ -397,25 +396,37 @@
 
     const results = {
       A: {
-        title: "まずは、モヤモヤを言葉にする時期",
-        description: "今すぐ大きな決断をしなくて大丈夫です。動けないのは、意志が弱いからではなく、何に引っかかっているのかがまだ言葉になっていないだけかもしれません。",
-        steps: ["今の仕事でしんどい瞬間を書き出す", "少しでも前向きになれた経験を思い出す", "転職するか決める前に、現在地を整理する"]
+        title: "まずは、違和感を言葉にする時期",
+        description: "今のままでいいのか迷っている状態です。転職を決める前に、何に引っ掛かっているのかを整理すると次の一歩が見えやすくなります。",
+        steps: ["今の仕事で引っ掛かる瞬間を書き出す", "少しでも前向きになれた経験を思い出す", "転職するか決める前に、違和感を整理する"]
       },
       B: {
-        title: "積んできた経験を棚卸しする時期",
-        description: "ちゃんと頑張ってきたのに、自分の強みとして見えていない状態です。経験を言葉にすると、次に選べる仕事や環境がかなり見えやすくなります。",
-        steps: ["これまで任されたことを書き出す", "人から感謝された場面を振り返る", "今の経験がどの職種に活きるか整理する"]
+        title: "強みを見つける時期",
+        description: "頑張ってきたのに、先が見えにくい状態です。これまでの経験を整理すると、向いている仕事や次に積むべき経験が見えてきます。",
+        steps: ["これまで任されたことを書き出す", "人から感謝された場面を振り返る", "強みや向いている仕事を整理する"]
       },
       C: {
-        title: "焦りを止めて、選び方を整える時期",
-        description: "SNSを見て焦るのは自然です。ただ、焦ったまま転職・スクール・独立を決めると、あとで苦しくなることがあります。まずは今の自分に必要な経験を見極めましょう。",
-        steps: ["スクールに入る目的を明確にする", "独立前に必要な実務経験を整理する", "今すぐ変えるべきことと、積むべき経験を分ける"]
+        title: "情報に振り回されず、軸を作る時期",
+        description: "SNSを見るほど不安になりやすい状態です。焦って決めるより、自分に必要な経験と選び方を整理することが大切です。",
+        steps: ["焦っている理由を書き出す", "今すぐ変えることと積むべき経験を分ける", "自分だけのキャリア軸を整理する"]
       },
       D: {
-        title: "環境を変えて伸ばす準備がある時期",
-        description: "成長したい気持ちがはっきり出ています。大事なのは、勢いだけで選ばないこと。どの環境で、どんな経験を積むかまで決めると、次の一歩が強くなります。",
-        steps: ["営業・販売など対人力が伸びる仕事を知る", "自分に合う成長環境を整理する", "求人を見る前に、キャリアの軸を決める"]
+        title: "成長できる環境を選ぶ時期",
+        description: "もっと伸びたい気持ちが出ている状態です。勢いだけで選ばず、どんな環境で何を積むかを決めると、次の一歩が強くなります。",
+        steps: ["伸ばしたい力を整理する", "自分に合う成長環境を知る", "求人を見る前に、キャリアの軸を決める"]
       }
+    };
+
+    const lineRoutes = {
+      default: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      x: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      twitter: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      threads: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      instagram: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=u5hcjz",
+      ig: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=u5hcjz",
+      tiktok: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=u5hcjz",
+      note: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=wYB3yK",
+      article: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=wYB3yK"
     };
 
     const scores = { A: 0, B: 0, C: 0, D: 0 };
@@ -428,6 +439,13 @@
     const choicesEl = document.getElementById("choices");
     const countEl = document.getElementById("count");
     const barEl = document.getElementById("bar");
+    const lineCta = document.getElementById("line-cta");
+
+    function applyLineRoute() {
+      const params = new URLSearchParams(window.location.search);
+      const source = (params.get("src") || params.get("utm_source") || "default").toLowerCase();
+      lineCta.href = lineRoutes[source] || lineRoutes.default;
+    }
 
     function show(screen) {
       [startScreen, questionScreen, resultScreen].forEach((el) => el.classList.remove("active"));
@@ -490,6 +508,8 @@
       renderQuestion();
       show(questionScreen);
     });
+
+    applyLineRoute();
   </script>
 </body>
 </html>
