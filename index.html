@@ -112,9 +112,14 @@
     .lead {
       margin-top: 16px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: clamp(10px, 3.2vw, 14px);
       line-height: 1.85;
       font-weight: 700;
+    }
+
+    .lead span {
+      display: block;
+      white-space: nowrap;
     }
 
     .primary-button,
@@ -319,7 +324,7 @@
         <img class="mark" src="carricoco-symbol.png" alt="キャリココ">
         <p class="eyebrow">キャリココ｜20代キャリア診断</p>
         <h1><span>一度きりの人生</span><span class="headline-tight">今の仕事に熱狂できてる？</span></h1>
-        <p class="lead">本当に転職すべきか、今の環境で積むべきか。決めきれない感情を、5つの問いで整理しましょう。</p>
+        <p class="lead"><span>本当に転職すべきか、今の環境で積むべきか。</span><span>決めきれない感情を、5つの問いで整理しましょう。</span></p>
         <button class="primary-button" type="button" id="start-button">診断スタート</button>
       </div>
     </section>
